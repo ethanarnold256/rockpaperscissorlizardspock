@@ -1,0 +1,64 @@
+:root {
+    /* variables */
+    --color-background-star: rgb(239, 239, 239);
+    --color-background-star-tie: rgb(239, 239, 239);
+    --color-background-star-loss: rgb(239, 223, 223);
+    --color-background-star-win: rgb(223, 239, 223);
+    --color-background-satellite: rgb(223, 223, 223);
+    --color-background-satellite-hover: rgb(207, 207, 207);
+    --color-background-satellite-activate: rgb(191, 191, 191);
+    --size-star: 480px;
+    --size-satellite: 180px;
+
+    user-select: none;
+}
+
+body {margin: 0;}
+
+/* centered content */
+.center, .content, .system, .star, .satellite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.clickable, .satellite {
+    user-select: none;
+    cursor: pointer;
+}
+
+.content {
+    height: 100vh;
+    gap: var(--size-satellite);
+}
+
+/* left and right content */
+.side {
+    font-size: 4rem;
+    width: 240px;
+}
+
+.system {flex-direction: column;}
+
+.star {
+    width: var(--size-star);
+    height: var(--size-star);
+    border-radius: 100%;
+    background-color: var(--color-background-star);
+    font-size: calc(var(--size-star)/2);
+    user-select: none;
+
+}
+
+.satellite {
+    position: relative;
+    width: var(--size-satellite);
+    height: var(--size-satellite);
+    margin: calc(var(--size-satellite)/-2);
+    border-radius: 100%;
+    background-color: var(--color-background-satellite);
+    font-size: calc(var(--size-satellite)/2);
+}
+
+.satellite:active {background-color: var(--color-background-satellite-activate);}
